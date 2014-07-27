@@ -9,7 +9,8 @@
     "grunt-nodemon": "0.3.0",
     "mongodb": "*",
     "logfmt": "1.1.2",
-    "mongoose": "*"
+    "mongoose": "*",
+    "block_id": "0.1.0"
   },
   "main": "index.js",
   "devDependencies": {},
