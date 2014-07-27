@@ -5,6 +5,9 @@ var mongoUri = process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://localhost/test';
 
+console.log(process.env);
+
+console.log(process.env.MONGOLAB_URI);
 
 mongoose.connect(mongoUri);
 
