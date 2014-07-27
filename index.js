@@ -27,6 +27,13 @@ app.get('/register', function(req, res) {
 app.get('/help', function(req, res) {
   res.sendfile(__dirname + '/pages/help.html');
 });
+app.get('/css/moolah.css', function(req, res) {
+  res.sendfile(__dirname + '/css/moolah.css');
+});
+
+app.get('/moolah', function(req, res) {
+  res.sendfile(__dirname + '/pages/moolah.html');
+});
 
 app.get('/policy', function(req, res) {
   res.sendfile(__dirname + '/pages/policy.html');

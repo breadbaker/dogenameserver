@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cryptographic payments platform. Consumer wallets and merchant services. Supports Bitcoin, Dogecoin, Litecoin, Vertcoin and more.">
+    <title>moolah - consumer accounts</title>
+
+    <!--<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">-->
+    <link href="/css/moolah.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <style type="text/css">
+        html {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: white;
+            font-family: 'Fira Sans', sans-serif;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            line-height: 1.4em;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Fira Sans';
+        }
+
+        #left {
+            background-color: #404040;
+            color: white;
+            float: left;
+            font-size: 12px;
+            height: 100%;
+            width: 15%;
+        }
+
+        #right {
+            background-color: #fafafa;
+            float: left;
+            height: 100%;
+            overflow-y: auto;
+            width: 85%;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .padded16 {
+            padding: 16px;
+        }
+
+        .padded32 {
+            padding: 32px;
+        }
+
+        .c {
+            text-align: center;
+        }
+
+        .l {
+            text-align: left;
+        }
+
+        .r {
+            text-align: right;
+        }
+
+        .nav {
+            font-size: 14px;
+        }
+
+        a {
+            color: #b3c972;
+        }
+    </style>
+</head>
+<body>
+<div id="left">
+    <div class="padded16">
+        <div class="c" style="margin-bottom: 16px;">
+            <a href="/dashboard"><img src="//moolah.io/logo.png" style="width: 100%;" /></a>
+        </div>
+        <div class="l" style="margin-bottom: 16px;">
+            Welcome back, <span style="color: #b3c972; font-weight: bold;">Danbaker</span>.
+        </div>
+        <div class="nav l">
+            <a href="/dashboard/my-accounts">My Accounts</a>
+                    </div>
+        <div class="nav l">
+            <a href="/dashboard/merchant">Merchant Services</a>
+                                </div>
+        <div class="nav l">
+            <a href="/dashboard/exchange">Currency Exchange</a>
+                    </div>
+        <div class="nav l">
+            <a href="/dashboard/security">Security</a>
+        </div>
+        <div class="nav l">
+            <a href="/dashboard/settings">Settings</a>
+        </div>
+        <div class="nav l">
+            <a target="_blank" href="https://moopay.freshdesk.com/helpdesk">Support</a>
+        </div>
+        <div class="nav l">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>
+<div id="right">
+        <style type="text/css">
+        #right {
+            font-size: 14px;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #dfdfdf;
+            border-radius: 15px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .circle {
+            background-color: rgba(0,0,0,0);
+            border:5px solid rgba(0,183,229,0.9);
+            opacity:.9;
+            border-right:5px solid rgba(0,0,0,0);
+            border-left:5px solid rgba(0,0,0,0);
+            border-radius:50px;
+            box-shadow: 0 0 35px #2187e7;
+            width:50px;
+            height:50px;
+            margin:0 auto;
+            -moz-animation:spinPulse 1s infinite ease-in-out;
+            -webkit-animation:spinPulse 1s infinite linear;
+        }
+        .circle1 {
+            background-color: rgba(0,0,0,0);
+            border:5px solid rgba(0,183,229,0.9);
+            opacity:.9;
+            border-left:5px solid rgba(0,0,0,0);
+            border-right:5px solid rgba(0,0,0,0);
+            border-radius:50px;
+            box-shadow: 0 0 15px #2187e7;
+            width:30px;
+            height:30px;
+            margin:0 auto;
+            position:relative;
+            top:-50px;
+            -moz-animation:spinoffPulse 1s infinite linear;
+            -webkit-animation:spinoffPulse 1s infinite linear;
+        }
+
+        @-moz-keyframes spinPulse {
+            0% { -moz-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7;}
+            50% { -moz-transform:rotate(145deg); opacity:1; }
+            100% { -moz-transform:rotate(-320deg); opacity:0; }
+        }
+        @-moz-keyframes spinoffPulse {
+            0% { -moz-transform:rotate(0deg); }
+            100% { -moz-transform:rotate(360deg);  }
+        }
+        @-webkit-keyframes spinPulse {
+            0% { -webkit-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7; }
+            50% { -webkit-transform:rotate(145deg); opacity:1;}
+            100% { -webkit-transform:rotate(-320deg); opacity:0; }
+        }
+        @-webkit-keyframes spinoffPulse {
+            0% { -webkit-transform:rotate(0deg); }
+            100% { -webkit-transform:rotate(360deg); }
+        }
+    </style>
+
+    <div class="padded32">
+        <h3>Dogecoin Account <small>( doge2 )</small></h3>
+        <h5>19886-1585af70-9ba8-4a46-ae82-927053d94329</h5>
+        <hr />
+        <div class="box">
+            <div class="padded16">
+                <h5 class="bold">Account Details</h5>
+                <hr />
+                <div style="float: left; text-align: center; width: 33.33%;">
+                    <strong>Address</strong><br />
+                    DL5breyaXhTaMLFtJqZ4yNNcPcWJjj7hnw
+                </div>
+                <div style="float: left; text-align: center; width: 33.33%;">
+                    <strong>Balance</strong><br />
+                    500.00000000 DOGE
+                </div>
+                <div style="float: left; text-align: center; width: 33.33%;">
+                    <strong>Available Balance</strong><br />
+                    0.00000000 DOGE
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <br />
+        <div class="box">
+            <div class="padded16">
+                <h5 class="bold">Send Money</h5>
+                <hr />
+                                <div style="float: left; width: 25%;">
+                    <label>Send to</label>
+                    <select id="send-to" name="send-to">
+                        <option value="address">Address</option>
+                        <option value="email">Email</option>
+                        <option value="exchange">Exchange Balance</option>
+                        <option value="account">Other Account</option>
+                        <option value="sms">SMS</option>
+                    </select>
+                </div>
+                <div style="float: left; margin-left: 1%; width: 24%;">
+                    <label>Destination</label>
+                    <input id="send-destination" type="text" />
+                    <select id="send-destination-accounts" class="hide">
+                                                <option value="-1">Please select...</option>
+                                                <option value="19886-8c621dac-31be-4b83-846c-cdd4aaabda4d">doge</option>
+                                                                    </select>
+                </div>
+                <div style="float: left; margin-left: 1%; width: 24%;">
+                    <label>Amount</label>
+                    <input id="send-amount" type="text" />
+                </div>
+                <div style="float: left; margin-left: 1%; width: 24%;">
+                    <label>Account PIN</label>
+                    <input id="send-pin" type="text" />
+                </div>
+                <div class="clear"></div>
+                <button id="send" class="button tiny radius" style="background-color: #b3c972; margin-bottom: 0px; width: 100%;">Send Money</button>
+            </div>
+        </div>
+        <br />
+        <div class="box">
+            <div class="padded16">
+                <h5 class="bold">Pending Transactions</h5>
+                <hr />
+                                    <table style="width: 100%;">
+                        <thead>
+                        <tr>
+                            <td style="width: 1px;">Type</td>
+                            <td style="width: 1px;">Address</td>
+                            <td>Amount (DOGE)</td>
+                            <td>When</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                                    <tr>
+                                <td>Receive</td>
+                                <td>DL5breyaXhTaMLFtJqZ4yNNcPcWJjj7hnw</td>
+                                <td>500.00000000</td>
+                                <td>07/27/2014 23:42:06</td>
+                            </tr>
+                                                </tbody>
+                    </table>
+                            </div>
+        </div>
+        <br />
+        <div class="box">
+            <div class="padded16">
+                <h5 class="bold">Cleared Transactions</h5>
+                <hr />
+                                You have no cleared transactions.
+                            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="/bower_components/intl-tel-input/build/css/intlTelInput.css">
+</div>
+<div class="clear"></div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/js/blockui.js"></script>
+<script src="/js/bignumber.min.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/jquery.growl.js"></script>
+
+<script>
+    // $(document).foundation();
+
+    // var loading = function() {
+    //     $.blockUI({ css: {
+    //         border: 'none',
+    //         padding: '15px',
+    //         backgroundColor: '#000',
+    //         '-webkit-border-radius': '10px',
+    //         '-moz-border-radius': '10px',
+    //         opacity: .5,
+    //         color: '#fff'
+    //     } });
+    // };
+</script>
+
+<script>
+    // (function(){
+    //     var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+    // })("woopra");
+
+    // woopra.config({
+    //     domain: 'moolah.io',
+    //     idle_timeout: 1800000
+    // });
+
+    // woopra.track();
+</script>
+
+    <script src="/bower_components/intl-tel-input/build/js/intlTelInput.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            var nameEl = $('#send-destination');
+
+            checkAvail = function () {
+                $.get('/check?name=' + nameEl.val(), function(resp) {
+                    if ( resp === 'open') {
+                        // alert('no record');
+                    } else {
+                        $('#send-destination').val(resp.dogeHash);
+                    }
+                })
+            };
+
+            var debounced = _.debounce(checkAvail, 100);
+
+            nameEl.on('keyup', debounced);
+        });
+        //     $('#send-to').change(function() {
+        //         var selected = $('#send-to :selected').val();
+
+        //         if(selected == 'account') {
+        //             $('#send-destination').hide();
+        //             $('#send-destination-accounts').show();
+        //         } else {
+        //             $('#send-destination-accounts').hide();
+        //             $('#send-destination').show();
+
+        //             if(selected == 'exchange') {
+        //                 $('#send-destination').val('');
+        //                 $('#send-destination').attr('disabled', 'disabled');
+        //             } else {
+        //                 $('#send-destination').removeAttr('disabled');
+        //             }
+        //         };
+
+        //         if(selected == 'sms') {
+        //             var placeholder = 'e.g. +15552129827';
+        //             $("#send-destination").intlTelInput();
+        //         } else {
+        //             var placeholder = '';
+
+        //             try {
+        //                 $("#send-destination").intlTelInput('destroy');
+        //             } catch(e) {
+        //                 //
+        //             };
+        //         };
+
+        //         $('#send-destination').attr('placeholder', placeholder);
+        //     });
+
+        //     $('#send').click(function(e) {
+        //         e.preventDefault();
+
+        //         if($('#send-amount').val() == '') { return false; };
+        //         if(isNaN($('#send-amount').val()) !== false) { return false; };
+        //         if($('#send-pin').val() == '') { return false; };
+
+        //         if($('#send-to :selected').val() == 'account') {
+        //             var destination = $('#send-destination-accounts :selected').val();
+
+        //             if(destination == '-1') { return false; };
+        //         } else {
+        //             if($('#send-to :selected').val() != 'exchange') {
+        //                 var destination = $('#send-destination').val();
+
+        //                 if (destination == '') {
+        //                     return false;
+        //                 }
+        //                 ;
+        //             };
+        //         };
+
+        //         loading();
+
+        //         $.post('/api/v2/private/consumer/send', {
+        //             account: '19886-1585af70-9ba8-4a46-ae82-927053d94329',
+        //             type: $('#send-to :selected').val(),
+        //             destination: destination,
+        //             amount: $('#send-amount').val(),
+        //             pin: $('#send-pin').val()
+        //         }, function(data) {
+        //             if(data.status == 'success') {
+        //                 location.reload();
+        //             } else {
+        //                 $.growlUI('Failure!', data.reason);
+        //             };
+        //         });
+        //     });
+        // });
+    </script>
+
+</body>
+</html>
