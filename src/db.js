@@ -1,5 +1,5 @@
 // getting-started.js
-var mongoose = require('mongoose');
+mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
 var NameSchema = mongoose.Schema({
@@ -8,7 +8,6 @@ var NameSchema = mongoose.Schema({
     description: String
 });
 
-var NameRecord = mongoose.model('NameRecord', NameSchema);
-
+NameRecord = mongoose.model('NameRecord', NameSchema);
 
 
