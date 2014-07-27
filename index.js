@@ -22,6 +22,7 @@ app.get('/help', function(req, res) {
 });
 
 var port = Number(process.env.PORT || 5000);
+console.log('port', port);
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
