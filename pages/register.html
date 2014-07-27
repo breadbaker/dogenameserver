@@ -22,6 +22,7 @@
 
         <input type="text" id="dogeHash" placeHolder="doge dogeHash">
         <button class="btn" id="save">Save</button>
+        <p id="response"></p>
         <script type="text/javascript">
         $(document).on('ready',function () {
 
@@ -39,17 +40,36 @@
                 })
             };
 
+            var checkConfirm = function ( name, tries) {
+
+                if (tries < 1) {
+                    $('#response').html(' too late');
+                    return;
+                }
+                $.get('./confirm?name=' + name, function (resp) {
+                    if (resp === 'confirmed') {
+                        $('#response').html('confirmed!');
+                    } else {
+                        setTimeout(function() {
+                            checkConfirm(name, tries-1);
+                        }, 30* 1000);
+                    }
+                });
+            }
+
             var debounced = _.debounce(checkAvail, 100);
 
             nameEl.on('keyup', debounced);
 
             $('#save').on('click', function () {
-                $.post('./saveName', {
-                    name: nameEl.val(), 
+                var name = nameEl.val();
+                $.post('./query', {
+                    name: name, 
                     dogeHash: $('#dogeHash').val()
                 }, function (resp) {
                     if ( resp !== 'taken' && resp !== 'error') {
-                        alert('saved');
+                        $('#response').html('Pleasee pay us ' + resp.amount + ' doge coin to: ' + resp.address + '. Do this within 20min.');
+                        checkConfirm(name, 10);
                     } else {
                         alert(resp);
                     }

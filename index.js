@@ -14,6 +14,10 @@ app.get('/check', function (req, res) {
     });
 });
 
+app.post('/query', require('./api/queryName'));
+
+app.get('/confirm', require('./api/confirm'));
+
 app.post('/saveName', require('./api/saveName'));
 
 app.get('/register', function(req, res) {

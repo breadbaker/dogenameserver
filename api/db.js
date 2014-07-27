@@ -11,9 +11,11 @@ mongoose.connect(mongoUri);
 var NameSchema = mongoose.Schema({
     name: String,
     dogeHash: String,
-    description: String
+    description: String,
+    address: String,
+    amountToPay: String,
+    timeLeft: String,
+    confirmed: Boolean
 });
 
 NameRecord = mongoose.model('NameRecord', NameSchema);
-
-
