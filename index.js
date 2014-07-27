@@ -21,6 +21,7 @@ app.get('/help', function(req, res) {
   res.sendfile(__dirname + '/pages/help.html');
 });
 
-var server = app.listen(80, function() {
-    console.log('Listening on port %d', server.address().port);
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
 });
