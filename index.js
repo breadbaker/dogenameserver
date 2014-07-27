@@ -1,29 +1,45 @@
-var express = require('express');
+// var express = require('express');
+// var app = express();
+
+// app.get('/check', require('./api/checkName'));
+
+// app.get('/saveName', require('./api/saveName'));
+
+// app.get('/register', function(req, res) {
+//   res.sendfile(__dirname + '/pages/register.html');
+// });
+
+// app.get('/help', function(req, res) {
+//   res.sendfile(__dirname + '/pages/help.html');
+// });
+
+// app.get('/policy', function(req, res) {
+//   res.sendfile(__dirname + '/pages/policy.html');
+// });
+
+// app.get('/help', function(req, res) {
+//   res.sendfile(__dirname + '/pages/help.html');
+// });
+
+// var port = Number(process.env.PORT || 5000);
+// console.log('port', port);
+// port = 80;
+// app.listen(port, function() {
+//   console.log("Listening on " + port);
+// });
+
+// web.js
+var express = require("express");
+var logfmt = require("logfmt");
 var app = express();
 
-app.get('/check', require('./api/checkName'));
+app.use(logfmt.requestLogger());
 
-app.get('/saveName', require('./api/saveName'));
-
-app.get('/register', function(req, res) {
-  res.sendfile(__dirname + '/pages/register.html');
-});
-
-app.get('/help', function(req, res) {
-  res.sendfile(__dirname + '/pages/help.html');
-});
-
-app.get('/policy', function(req, res) {
-  res.sendfile(__dirname + '/pages/policy.html');
-});
-
-app.get('/help', function(req, res) {
-  res.sendfile(__dirname + '/pages/help.html');
+app.get('/', function(req, res) {
+  res.send('Hello World!');
 });
 
 var port = Number(process.env.PORT || 5000);
-console.log('port', port);
-port = 80;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
