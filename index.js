@@ -1,7 +1,17 @@
 var express = require('express');
 var app = express();
 
-app.get('/check', require('./api/checkName'));
+var check = require('./api/checkName');
+
+app.get('/check', function (req, res) {
+    check(req.query.name, function (result) {
+      if ( result) {
+        res.send(result);
+      } else {
+        res.send('open');
+      }
+    });
+});
 
 app.get('/saveName', require('./api/saveName'));
 
