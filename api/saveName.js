@@ -2,11 +2,15 @@ require('./db');
 
 var check = require('./checkName');
 module.exports = function (req, res) {
-    check(req.query.name, function (found) {
+    var name = req.body.name
+    check(name, function (found) {
         if (found) {
             res.send('taken');
         } else {
-            var nameRecord = new NameRecord({ name: req.query.name });
+            var nameRecord = new NameRecord({ 
+                name: name, 
+                dogeHash: req.body.dogeHash
+             });
             nameRecord.save(function (err, fluffy) {
               if (err) {
                 return res.send('error');

@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.use(express.bodyParser());
 
 var check = require('./api/checkName');
 
@@ -13,7 +14,7 @@ app.get('/check', function (req, res) {
     });
 });
 
-app.get('/saveName', require('./api/saveName'));
+app.post('/saveName', require('./api/saveName'));
 
 app.get('/register', function(req, res) {
   res.sendfile(__dirname + '/pages/register.html');
@@ -29,6 +30,10 @@ app.get('/policy', function(req, res) {
 
 app.get('/help', function(req, res) {
   res.sendfile(__dirname + '/pages/help.html');
+});
+
+app.get('/', function(req, res) {
+  res.sendfile(__dirname + '/pages/check.html');
 });
 
 var port = Number(process.env.PORT || 5000);
