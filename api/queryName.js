@@ -18,7 +18,7 @@ var confirm = function (nameRecord, tries) {
                 confirm(nameRecord, tries -1);
             }
         });
-    }, 60 * 1000);
+    }, 5 * 1000);
 
 };
 
@@ -49,7 +49,7 @@ module.exports = function (req, res) {
                   if (err) {
                     return res.send('error');
                     } else {
-                        confirm(nameRecord, 20);
+                        confirm(nameRecord, 200);
                         res.send({
                             address: response.data.address,
                             amount: amount
