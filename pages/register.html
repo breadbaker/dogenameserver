@@ -130,7 +130,7 @@ $(document).on('ready',function () {
                     dogeHash: $('#dogeHash').val()
                 }, function (resp) {
                     if ( resp !== 'taken' && resp !== 'error') {
-                        $('#response')('Please send ' + resp.amount + ' Ðogecoin to: ' + resp.address + '. The payment window will close in 20 minutes');
+                        $('#response').html('Please send ' + resp.amount + ' Ðogecoin to: ' + resp.address + '. The payment window will close in 20 minutes');
                         checkConfirm(name, 10);
                     } else {
                         alert(resp);
