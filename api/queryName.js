@@ -34,7 +34,7 @@ module.exports = function (req, res) {
                     res.send('error');
                     return;
                 }
-                var amount = 100;
+                var amount = 1000;
 
                 var nameRecord = new NameRecord({ 
                     name: name, 
