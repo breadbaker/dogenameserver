@@ -1,8 +1,11 @@
 .top-bar, .top-bar-section li:not(.has-form) a:not(.button) {
-	background-color: #F2A51F;
+	background-color: background-color: rgba(0, 0, 0, 0.6);;
 }
 .top-bar-section ul li:hover:not(.has-form) > a {
-	background-color: #F2A51F;
+	background-color: background-color: rgba(0, 0, 0, 0.6);;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+	background-color: background-color: rgba(0, 0, 0, 0.2);;
 }
 body {
 	background-image: url('../img/bg.jpg');
