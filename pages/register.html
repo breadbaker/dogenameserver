@@ -110,7 +110,7 @@ $(document).on('ready',function () {
                 }
                 $.get('./confirm?name=' + name, function (resp) {
                     if (resp === 'confirmed') {
-                        $('#response')('confirmed!');
+                        $('#response').html('confirmed!');
                     } else {
                         setTimeout(function() {
                             checkConfirm(name, tries-1);
