@@ -41,16 +41,16 @@
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="clear">
-                        <a href="register.html">Sign-up</a>
+                        <a href="register">Sign-up</a>
                     </li>
                     <li class="clear">
-                        <a href="check.html">Check listings</a>
+                        <a href="check">Check listings</a>
                     </li>
                     <li class="clear">
-                        <a href="policy.html">Policy</a>
+                        <a href="policy">Policy</a>
                     </li>
                     <li class="clear">
-                        <a href="help.html">Help</a>
+                        <a href="help">Help</a>
                     </li>
                 </ul><!-- Left Nav Section -->
                 <ul class="left">
@@ -70,7 +70,6 @@
             </h1>
             <div class="small-6 panel round small-centered columns">
                 <div>
-                    <img src="img/vec.svg">
                 </div><br>
                 <p class="quiet">
                     Name
@@ -79,6 +78,12 @@
                     Public Address
                 </p><input type="text" id="dogeHash" placeholder="DPfDsaTh38Eou4b8RXQJSCAk5mFTYWjiBP"> <button class="btn" id="save">Save</button>
                 <p id="response"></p>
+                <div class="fund">
+                    <div class="centered">
+                        <img src="img/fund.png" class="centered small-centered" style="width:30%;float:center;">
+                    </div>
+                    <p>*10% of all proceeds will be donated to the Ðogecoin foundation.</p>
+                </div>
             </div>
         </div><script type="text/javascript">
 $(document).on('ready',function () {
@@ -100,12 +105,12 @@ $(document).on('ready',function () {
             var checkConfirm = function ( name, tries) {
 
                 if (tries < 1) {
-                    $('#response').html(' too late');
+                    $('#response')(' too late');
                     return;
                 }
                 $.get('./confirm?name=' + name, function (resp) {
                     if (resp === 'confirmed') {
-                        $('#response').html('confirmed!');
+                        $('#response')('confirmed!');
                     } else {
                         setTimeout(function() {
                             checkConfirm(name, tries-1);
@@ -125,7 +130,7 @@ $(document).on('ready',function () {
                     dogeHash: $('#dogeHash').val()
                 }, function (resp) {
                     if ( resp !== 'taken' && resp !== 'error') {
-                        $('#response').html('Pleasee pay us ' + resp.amount + ' doge coin to: ' + resp.address + '. Do this within 20min.');
+                        $('#response')('Please send ' + resp.amount + ' Ðogecoin to: ' + resp.address + '. The payment window will close in 20 minutes');
                         checkConfirm(name, 10);
                     } else {
                         alert(resp);
