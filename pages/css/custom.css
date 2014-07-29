@@ -22,3 +22,7 @@ body {
 .quiet {
 	opacity: .75;
 }
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
