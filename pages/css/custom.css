@@ -1,11 +1,20 @@
-.top-bar, .top-bar-section li:not(.has-form) a:not(.button) {
-	background-color: background-color: rgba(0, 0, 0, 0.6);;
+.top-bar {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background-color: rgba(0, 0, 0, 0);
 }
 .top-bar-section ul li:hover:not(.has-form) > a {
-	background-color: background-color: rgba(0, 0, 0, 0.6);;
+	background-color: rgba(0, 0, 0, 0);
 }
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-	background-color: background-color: rgba(0, 0, 0, 0.2);;
+	background-color: rgba(0, 0, 0, 0);
+}
+.clear {
+	background-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+	
 }
 body {
 	background-image: url('../img/bg.jpg');
